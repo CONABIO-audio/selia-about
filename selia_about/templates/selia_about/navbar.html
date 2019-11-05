@@ -1,0 +1,54 @@
+{% extends 'selia_templates/secondary_navbar.html' %}
+{% load i18n %}
+
+{% block navbar-brand %}
+<a class="navbar-brand" id="dropdownMenuButton" href={% url 'selia_about:selia' %}>{% trans 'About' %}</a>
+{% endblock navbar-brand %}
+
+{% block navbar-items %}
+{% url 'selia_about:selia' as selia_about_url %}
+<li class="nav-item">
+  {% if selia_about_url == request.path|urlencode %}
+  <a class="nav-link active" href={{ selia_about_url }}>
+    {% else %}
+    <a class="nav-link" href={{ selia_about_url }}>
+      {% endif %}
+      Selia
+    </a>
+</li>
+
+{% url 'selia_about:irekua' as irekua_about_url %}
+<li class="nav-item">
+  {% if irekua_about_url == request.path|urlencode %}
+  <a class="nav-link active" href={{ irekua_about_url }}>
+    {% else %}
+    <a class="nav-link" href={{ irekua_about_url }}>
+      {% endif %}
+      Irekua
+    </a>
+</li>
+
+{% url 'selia_about:contact' as contact_url %}
+<li class="nav-item">
+  {% if contact_url == request.path|urlencode %}
+  <a class="nav-link active" href={{ contact_url }}>
+    {% else %}
+    <a class="nav-link" href={{ contact_url }}>
+      {% endif %}
+      <i class="fas fa-address-book"></i>
+      {% trans 'Contact' %}
+    </a>
+</li>
+
+{% url 'selia_about:collections' as collections_url %}
+<li class="nav-item">
+  {% if collections_url == request.path|urlencode %}
+  <a class="nav-link active" href={{ collections_url }}>
+    {% else %}
+    <a class="nav-link" href={{ collections_url }}>
+      {% endif %}
+      <i class="fas fa-archive"></i>
+      {% trans 'Collections' %}
+    </a>
+</li>
+{% endblock navbar-items %}
