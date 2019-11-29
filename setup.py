@@ -18,6 +18,9 @@ setup(
     url='https://github.com/CONABIO-audio/selia-about',
     author='CONABIO, Gustavo Everardo Robredo Esquivelzeta, Santiago Martínez Balvanera',
     author_email='erobredo@conabio.gob.mx, smartinez@conabio.gob.mx',
+    install_requires=[
+        'selia-templates',
+    ],
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
