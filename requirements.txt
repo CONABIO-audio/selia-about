@@ -7,5 +7,5 @@ pycountry==19.8.18
 pytz==2019.3
 selia-forms==0.1
 selia-templates==0.1
-sqlparse==0.3.0
+sqlparse==0.4.4
 
